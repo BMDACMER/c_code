@@ -1,8 +1,12 @@
 #include <stdio.h>
+#include <time.h>
+
 int main(int argc, char *argv[])
 {
 	//  算法改进  用book来标记互不相等的数
 	int a[10],i,total=0,book[10],sum;
+	double start,end;
+	start = clock();
 	for(a[1]=1;a[1]<=9;++a[1])  // 第一个数的百位
 	for(a[2]=1;a[2]<=9;++a[2])  // 第一个数的十位 
 	for(a[3]=1;a[3]<=9;++a[3])  // 第一个数的个位
@@ -29,7 +33,8 @@ int main(int argc, char *argv[])
 			printf("%d%d%d+%d%d%d=%d%d%d\n",a[1],a[2],a[3],a[4],a[5],a[6],a[7],a[8],a[9]);
 		}		
 	} 
-	 
+	end = clock(); 
 	printf("\ntotal=%d\n\n",total/2); 
+	printf("total cost time:%lfs\n",(end-start)/1000);
 	return 0;
 }
